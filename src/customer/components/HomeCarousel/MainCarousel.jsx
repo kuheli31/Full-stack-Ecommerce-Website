@@ -2,6 +2,7 @@ import React from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { MainCarouselData } from './MainCarouselData';
+import './MainCarousel.css'; // Import custom CSS to hide dots
 
 const MainCarousel = () => {
     const items = MainCarouselData.map((item, index) => (
@@ -16,8 +17,8 @@ const MainCarousel = () => {
     ));
 
     const responsive = {
-        0: { items: 1 },         // On small screens, show 1 item
-        1024: { items: 1 }       // On larger screens too — single image view
+        0: { items: 1 },
+        1024: { items: 1 }
     };
 
     return (
@@ -27,8 +28,8 @@ const MainCarousel = () => {
                 infinite
                 autoPlay
                 autoPlayInterval={1000}
-                disableButtonsControls
-                disableDotsControls={false}
+                disableButtonsControls={true}
+                disableDotsControls={true} // This should work, but just in case...
                 items={items}
                 responsive={responsive}
             />

@@ -1,0 +1,5 @@
+/* Force hide dots just in case the prop doesn't work */
+.alice-carousel__dots {
+    display: none !important;
+  }
+  
