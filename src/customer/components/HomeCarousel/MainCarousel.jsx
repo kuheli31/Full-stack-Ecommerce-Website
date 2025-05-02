@@ -29,7 +29,7 @@ const MainCarousel = () => {
                 autoPlay
                 autoPlayInterval={1000}
                 disableButtonsControls={true}
-                disableDotsControls={true} // This should work, but just in case...
+                disableDotsControls={true} 
                 items={items}
                 responsive={responsive}
             />
