@@ -1,11 +1,11 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import HomeSectionCard from "../HomeSectionCard/HomeSectionCard";
 import Button from "@mui/material/Button";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 
-const HomeSectionCarousel = () => {
+const HomeSectionCarousel = ({ items }) => {
   const carouselRef = useRef(null);
 
   const responsive = {
@@ -26,23 +26,14 @@ const HomeSectionCarousel = () => {
     }
   };
 
-  const item = [
-    <HomeSectionCard key={1} />,
-    <HomeSectionCard key={2} />,
-    <HomeSectionCard key={3} />,
-    <HomeSectionCard key={4} />,
-    <HomeSectionCard key={5} />,
-    <HomeSectionCard key={6} />,
-    <HomeSectionCard key={7} />,
-    <HomeSectionCard key={8} />,
-    <HomeSectionCard key={9} />,
-    <HomeSectionCard key={10} />,
-    <HomeSectionCard key={11} />,
-    <HomeSectionCard key={12} />,
-    <HomeSectionCard key={13} />,
-    <HomeSectionCard key={14} />,
-    <HomeSectionCard key={15} />,
-  ];
+  const carouselItems = items.map((product, index) => (
+    <HomeSectionCard
+      key={index}
+      title={product.title}
+      description={product.description}
+      image={product.image}
+    />
+  ));
 
   return (
     <div className="px-4 lg:px-8 border">
@@ -51,9 +42,9 @@ const HomeSectionCarousel = () => {
           mouseTracking
           disableDotsControls
           disableButtonsControls
-          items={item}
+          items={carouselItems}
           responsive={responsive}
-          ref={carouselRef} // ✅ attach the ref
+          ref={carouselRef}
         />
 
         {/* Left Button */}

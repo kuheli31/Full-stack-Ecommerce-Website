@@ -1,22 +1,17 @@
 import React from "react";
 
-const HomeSectionCard = () => {
+const HomeSectionCard = ({ title, description, image }) => {
   return (
-    <div className="cursor-pointer flex flex-col items-center bg-white rounded-lg shadow-lg overflow-hidden w-[15rem] mx-3 border">
-      <div className="h-[13rem] w-[10rem]">
+    <div className="bg-white rounded-md overflow-hidden shadow-md p-4 w-[15rem] md:w-[16rem] lg:w-[18rem] cursor-pointer">
+      <div className="h-[180px] md:h-[200px] lg:h-[250px] overflow-hidden mb-2">
         <img
-          className="object-cover object-top w-full h-full"
-          src="https://www.bing.com/th?id=OPAC.tpc75RWoUNtG%2bQ474C474&o=5&pid=21.1&w=160&h=235&rs=1&qlt=100&dpr=1.3&pcl=f5f5f5"
-          alt="image"
+          src={image}
+          alt={title}
+          className="object-cover w-full h-full rounded-md"
         />
       </div>
-
-      <div className="p-4">
-        <h3 className="text-lg font-medium text-gray-900">NoFilter</h3>
-        <p className="mt-2 text-sm text-gray-500">
-          Men Regular fit striped Formal
-        </p>
-      </div>
+      <h3 className="font-semibold text-lg">{title}</h3>
+      <p className="text-gray-600 text-sm">{description}</p>
     </div>
   );
 };
