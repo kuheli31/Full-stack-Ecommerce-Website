@@ -1,7 +1,6 @@
 export const MainCarouselData = [
     {
-        image:"https://th.bing.com/th/id/OPAC.lQw773uZLEtKeA474C474?w=592&h=550&o=5&dpr=1.3&pid=21.1",
-        path:"/women/clothing/lehenga_choli"
+        image:"/image/Home1.png"
     },
     {
         image:"https://image.hm.com/assets/hm/b6/f5/b6f5ea411a62a526735038168ca6fdb810fc9da3.jpg?imwidth=1260",
